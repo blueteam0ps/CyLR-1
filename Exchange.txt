@@ -1,0 +1,2 @@
+glob	C:\inetpub\wwwroot\**
+glob  C:\Program Files\Microsoft\Exchange Server\V15\**
