@@ -170,7 +170,11 @@ namespace CyLR
                     globPaths.Add(Glob.Parse(systemRoot + @"\System32\grouppolicy\**"));
                     globPaths.Add(Glob.Parse(systemRoot + @"\System32\WDI\LogFiles\StartupInfo\**"));
                     globPaths.Add(Glob.Parse(systemRoot + @"\System32\wbem\Repository\**"));
-                    
+                    globPaths.Add(Glob.Parse(programData + @"\Microsoft\Windows\WER\**"));
+                    globPaths.Add(Glob.Parse(systemDrive + @"\System Volume Information\**"));
+                    globPaths.Add(Glob.Parse(systemDrive + @"\Windows\apppatch\Custom\**"));
+                    globPaths.Add(Glob.Parse(systemDrive + @"\Windows\Minidump\**"));
+
                     staticPaths.Add(@"%SYSTEMROOT%\SchedLgU.Txt");
                     staticPaths.Add(@"%SYSTEMROOT%\inf\setupapi.dev.log");
                     staticPaths.Add(@"%SYSTEMROOT%\System32\drivers\etc\hosts");
@@ -187,6 +191,8 @@ namespace CyLR
                     staticPaths.Add(@"%SYSTEMROOT%\System32\config\SOFTWARE.LOG2");
                     staticPaths.Add(@"%SYSTEMROOT%\System32\config\SECURITY.LOG2");
                     staticPaths.Add(@"%systemDrive%\Windows\Temp\MpCmdRun.log");
+                    staticPaths.Add(@"%PROGRAMDATA%\Microsoft\Search\Data\Applications\Windows\Windows.edb");
+                    
                     
                     
                     //Old installation
@@ -198,6 +204,7 @@ namespace CyLR
                     globPaths.Add(Glob.Parse(systemDrive + @"\Windows.old\System32\LogFiles\W3SVC1\**"));
                     globPaths.Add(Glob.Parse(systemDrive + @"\Windows.old\System32\WDI\LogFiles\StartupInfo\**"));
                     globPaths.Add(Glob.Parse(systemDrive + @"\Windows.old\System32\wbem\Repository\**"));
+                    globPaths.Add(Glob.Parse(systemDrive + @"\Windows.old\apppatch\Custom\**"));
                     staticPaths.Add(@"%SystemDrive%\Windows.old\SchedLgU.Txt");
                     staticPaths.Add(@"%SystemDrive%\Windows.old\inf\setupapi.dev.log");
                     staticPaths.Add(@"%SystemDrive%\Windows.old\System32\drivers\etc\hosts");
@@ -214,7 +221,8 @@ namespace CyLR
                     staticPaths.Add(@"%SystemDrive%\Windows.old\System32\config\SOFTWARE.LOG2");
                     staticPaths.Add(@"%SystemDrive%\Windows.old\System32\config\SECURITY.LOG2");
                     staticPaths.Add(@"%SystemDrive%\Windows.old\Temp\MpCmdRun.log");
-
+                    
+                   
 
                     // Send static filesystem artifacts to collectionPaths directly
                     collectionPaths.Add(@"%SystemDrive%\$LogFile");
@@ -241,6 +249,8 @@ namespace CyLR
                         globPaths.Add(Glob.Parse($@"{user.ProfilePath}\AppData\Local\Microsoft\Windows\Explorer\**"));
                         globPaths.Add(Glob.Parse($@"{user.ProfilePath}\AppData\Local\Microsoft\Terminal Server Client\Cache\**"));
                         globPaths.Add(Glob.Parse($@"{user.ProfilePath}\AppData\Local\Microsoft\Windows\Notifications\**"));
+                        globPaths.Add(Glob.Parse($@"{user.ProfilePath}\AppData\Local\ConnectedDevicesPlatform\**"));
+                        globPaths.Add(Glob.Parse($@"{user.ProfilePath}\AppData\Local\CrashDumps\**"));
 
                         staticPaths.Add($@"{user.ProfilePath}\NTUSER.DAT");
                         staticPaths.Add($@"{user.ProfilePath}\NTUSER.DAT.LOG1");
